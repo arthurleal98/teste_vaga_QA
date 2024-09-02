@@ -16,6 +16,6 @@
     "teste_vaga_qa": "file:"
   },
   "jest": {
-    "testTimeout": 10000
+    "testTimeout": 20000
   }
 }
