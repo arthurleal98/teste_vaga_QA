@@ -1,29 +1,30 @@
-
-class GithubHomePage{
-    constructor(page){
-        this.page = page;
+class GithubHomePage {
+    constructor(page) {
+        this.page = page; // Inicializa a página do Puppeteer
     }
 
-    async acessarHomePage(){
-        await this.page.goto('https://github.com');
+    // Método para acessar a página inicial do GitHub
+    async acessarHomePage() {
+        await this.page.goto('https://github.com'); // Navega até a URL do GitHub
     }
 
-    async obterUrl(){
-        return this.page.url();
+    // Método para obter a URL atual da página
+    async obterUrl() {
+        return this.page.url(); // Retorna a URL atual da página
     }
 
-    async acessarPaginaDeLogin(){
-        // aguardar o elemento "Sign in" aparecer na tela
+    // Método para acessar a página de login do GitHub
+    async acessarPaginaDeLogin() {
+        // Aguarda o elemento "Sign in" aparecer na tela
         await this.page.waitForSelector('a[href="/login"]');
-        // clicar no link "Sign in"
+        // Clica no link "Sign in"
         await this.page.click('a[href="/login"]');
     }
 
-    obterUrlHomePage(){
-        return "https://github.com/";
+    // Método para obter a URL da página inicial do GitHub
+    obterUrlHomePage() {
+        return "https://github.com/"; // Retorna a URL da página inicial do GitHub
     }
-
-
 }
 
-module.exports = GithubHomePage;
+module.exports = GithubHomePage; // Exporta a classe GithubHomePage
